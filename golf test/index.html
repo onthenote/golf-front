@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="OnTheNote">
+    <meta name="keywords" content="골프 스타일 테스트">
+    <meta name="description" content="골프 스타일 테스트">
+    
+    <!-- for share-->
+    <meta property="og:url" content="https://golftest.onthenote.com" />
+    <meta property="og:title" content="골프 스타일 테스트" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/main.png" />
+    <meta property="og:description" content="나의 골프 스타일은?!" />
+
+    <!-- favicon-->
+    <link rel="shorcut icon" href="img/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="img/favicon.ico" />
+    
+    <title>골프 스타일 테스트</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet" 
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
+        crossorigin="anonymous">
+    <link rel="stylesheet" as="style" 
+        crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+    <link rel="stylesheet" href="./css/default.css">
+    <link rel="stylesheet" href="./css/design.css">
+</head>
+<body id="main-container" >
+    <div class="d-flex align-items-center justify-content-center" 
+        style="width:100%; height:6vh; background-color:white;">
+        <div class="container">
+            <div class="col-lg-5 px-3 mx-auto d-flex align-items-center justify-content-between">
+                <div>⛳ 골프 스타일 테스트</div>
+                <button style="border: none; background-color: white; color:#002726" onClick="location.href='https://golftest.onthenote.com'">📌 처음으로</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <section id = "main" class = "col-lg-5 mx-auto py-4 px-3">
+            <br>
+            <h3 class="header1 mx-auto px-2">골프 스타일 테스트⛳</h3>
+            <br>
+            <p class="header2 my-1">나의 골프 라운딩 스타일은 ?!</p>
+            <p class="my-1" style="font-size:17px; font-weight: 600;">지금까지 <span id="visitorCount"></span>명이 테스트 했어요.</p>
+            <br>
+            <div class= "col-lg-10 col-md-8 col-sm-10 col-12 mx-auto">
+              <img src="./img/main.png" alt="main image" 
+                class="img-fluid" style="border-radius: 20px;">
+            </div>
+            <br>
+            <button id="start" type="button" class="header3 my-3 mx-1 btn btn-secondary btn-lg" onclick="js:begin()">테스트 시작하기</button>
+        </section>
+        <section id="qna" class = "col-lg-5 mx-auto my-5 py-4 px-3">
+            <div class="status mx-auto my-3">
+                <div class="statusBar"></div>
+            </div>
+            <div class="status_cnt"></div>
+            <div id="question" class = "header3 qBox my-3 py-3 mx-auto"></div>
+            <br>
+            <div class="answerBox"></div>
+        </section>
+        <section id = "result_page" class = "col-md-6 mx-auto my-3 py-4 px-3">
+            <div class="mx-auto px-2">
+                <p class="header1">당신의 결과는?! ⛳</p>
+            </div>
+            <div id="result" class="my-2 d-flex align-items-center justify-content-center">
+                <div id="spinner" class="hide spinner-border text-secondary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div id="result_show" class="hide mx-auto py-2">
+                    <div class="resultname">
+                        <p id="type" class="header2"></p>
+                    </div>
+                    <div id ="resultImg" class= "col-md-6 col-sm-8 col-12 mx-auto">
+                    </div>
+                    <div id="resultDescription" class="resultDesc px-3 py-4">
+                    </div>
+                    <div class="d-flex align-items-center justify-content-around">
+                        <div class="d-flex align-items-center justify-content-around">
+                        <div class="card my-2 py-3 px-2" style="width: 90%;">
+                            <p class="card-header">찰떡궁합 1위</p>
+                            <img class="card1 card-img-top">
+                            <div class="card-body px-1" style="height: 100%;">
+                                <p class="card-text1"></p>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-around">
+                        <div class="card my-2 py-3 px-2" style="width:90%;">
+                            <p class="card-header">찰떡궁합 2위</p>
+                            <img class="card2 card-img-top">
+                            <div class="card-body px-1" style="height: 100%;">
+                                <p class="card-text2"></p>
+                            </div>
+                        </div> 
+                        </div>
+                    </div>
+                    <button id="retry" type="button" 
+                        class="my-3 mx-3 btn btn-secondary btn-lg" onClick="location.href='https://golftest.onthenote.com'">다시하기</button>
+                    <button id="share" type="button" 
+                        class="my-3 mx-3 btn btn-secondary btn-lg">공유하기</button>
+                    
+                    <p><strong>아래 카카오톡 아이콘을 눌러 전송하세요</strong></p>
+                        <a id="kakaotalk-sharing-btn" href="javascript:createDefaultButton();">
+                        <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+                          alt="카카오톡 공유 보내기 버튼" style="width:40px;height:40px;border-radius:40px"/>
+                      </a>
+                </div>
+            </div>
+        </section>
+        <script src="./js/start.js" charset="uft-8"></script>
+        <script src="./js/data.js" charset="uft-8"></script>
+        <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+            integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+/*■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+    1. 디폴트 폰트, 애니메이션 load
+
+- family: Pretendard
+    fonts:
+  - asset: fonts/Pretendard-Black.otf
+    weight: 900
+  - asset: fonts/Pretendard-ExtraBold.otf
+    weight: 800
+  - asset: fonts/Pretendard-Bold.otf
+    weight: 700
+  - asset: fonts/Pretendard-SemiBold.otf
+    weight: 600
+  - asset: fonts/Pretendard-Medium.otf
+    weight: 500
+  - asset: fonts/Pretendard-Regular.otf
+    weight: 400
+  - asset: fonts/Pretendard-Light.otf
+    weight: 300
+  - asset: fonts/Pretendard-Light.otf
+    weight: 200
+  - asset: fonts/Pretendard-Thin.otf
+    weight: 100
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■*/
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+
+/* @font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+*{
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 600;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@-webkit-keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.fadeIn{
+    animation:fadeIn ;
+    animation-duration: 0.5s;
+}
+
+.fadeOut{
+    animation:fadeOut ;
+    animation-duration: 0.5s;
+}
+
+/*-----------------------------------------------------*/
+/* 2. 폰트 */
+body {
+    background-color: #F0F0F0;
+    color: #002726;
+}
+
+.header1 {
+    font-weight:800; 
+    font-size: 28px;
+}
+
+.header2 {
+    font-weight:700; 
+    font-size: 24px; 
+}
+
+.header3 {
+    font-weight:600; 
+    font-size: 1.1rem;    
+}
+
+
+.paragraph {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/*-----------------------------------------------------*/
+/* 3. 레이아웃 */
+#main {
+    text-align: center;
+    border-radius: 20px;
+}
+
+#start {
+    background-color: #35A160;
+    border: none;
+}
+
+#qna {
+    display: none;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.status {
+    height: 14px;
+    width: 100%;
+    background-color: #6C6C6C;
+    border-radius: 15px;
+}
+
+.statusBar {
+    height: 100%;
+    border-radius: 15px;
+    background-color: #A7C7B5;
+}
+
+.status_cnt {
+    font-size: 18px;
+    color:#002726;
+}
+
+.qBox {
+    background-color: #61BC84;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: left;
+    color: white;
+}
+
+.answerList {
+    height: 30%;
+    width: 100%;
+    text-align: left;
+    border-color: #6C6C6C;
+    border-radius: 10px;
+}
+
+.answerList:hover, .answerList:focus {
+    background-color: #A7C7B5;
+    color: whitesmoke;
+}
+
+
+#result_page{
+    display: none;
+    text-align: center;
+}
+
+#spinner {
+    /* display: block; */
+    position: fixed;
+    z-index: 1031;
+    top: 35vh; 
+    right: auto;
+}
+
+.hide{
+    display: none;
+}
+
+.resultDesc{
+    background-color: #35A160;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.desc{
+    color:white;
+}
+
+#retry, #share {
+    background-color: #002726;
+    border:none;
+}
+
+.card-img-top{
+    object-fit: cover;
+}
+
+.card-header{
+    font-size:19px;
+    font-weight: 600;
+    background-color: white;
+    border: none;
+}
+.card-text1, .card-text2{
+    font-size: 17px;
+}
